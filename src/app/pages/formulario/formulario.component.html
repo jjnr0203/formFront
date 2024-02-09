@@ -1,1 +1,24 @@
-<p>formulario works!</p>
+<div class="container">
+    <div class="row">
+        <form [formGroup]="formulario">
+            <div class="name">
+                <label for="name"><b>*</b>Nombre: </label>
+                <input type="text" placeholder="Insert your name" formControlName="name">
+                <div>
+                    @if (formulario.controls['name'].hasError('required') && formulario.controls['name'].touched) {
+                        <span style="color: red;">Este campo es requerido</span>
+                    }
+                </div>
+            </div>
+            <div class="email">
+                <label for="email">Email: </label>
+                <input type="text" placeholder="Insert your email" formControlName="email">
+                <div>
+                    @if (formulario.controls['name'].hasError('required') && formulario.controls['name'].touched)  {
+                        <span style="color: red;">Este campo es requerido</span>
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
